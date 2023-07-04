@@ -1,0 +1,36 @@
+.chronometer{
+    font-size: 160px;
+    color: var(--white)
+}
+
+.btn{
+    font-family: 'Lato', sans-serif;
+    border: none;
+    border-radius: 50px;
+    padding: 20px;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.init{
+    color: var(--white);
+    background-color: var(--green);
+}
+.pause{
+    color: var(--white);
+    background-color: var(--blue);
+}
+.stop{
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.init:hover{
+    background-color: var(--bgreen);
+}
+.pause:hover{
+    background-color: var(--bblue);
+}
+.stop:hover{
+    background-color: var(--bred);
+}
