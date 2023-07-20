@@ -1,23 +1,18 @@
 import React from "react";
 import './chronometer.css'
-//import { TimeSetter } from "./functions";
-import { storage } from "./localStorage";
-
-let data = storage();
-let cnt;
-
-function init(){
-    let n1=0,n2=0;
-    n1++;
-    if(n1 > 59){
-        n1 = 0;
-        n2++;
-    }
-    return `${n2}:${n1}`;
-}
+import { timeSetter } from "./functions";
+const timeInit = "00:00";
 
 function Counter(){
-    const [count, setCount] = React.useState(data);
+    const [count, setCount] = React.useState(timeInit);
+    
+    const handleTime = (e) => {
+        e.preventDefault();
+        console.log(count);
+        let newTime = timeSetter(count);
+        setCount(newTime);
+    }
+
     return(
         <>  
             <h3 className="chronometer">
@@ -25,12 +20,11 @@ function Counter(){
             </h3>
 
             <button className="btn init"
-                onClick={ () => {
-                    cnt = init();
-                    console.log( typeof cnt);
-                    setCount(cnt);
-                }}
-            > INIT </button>
+                onClick={(e) => {handleTime(e)}}
+            > 
+                INIT 
+            </button>
+
             <button className="btn stop"> STOP </button>
             <button className="btn pause"> PAUSE </button>
         </>

@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { storage } from "./localStorage";
 
-/*
-function TimeSetter(){
-    const [time, setTime] = useState('');
+function timeSetter({time}){
+    let newTime = Number(time.replace(":",""));
+    newTime++;
+    return newTime;
 }
 
-export { TimeSetter };*/
+export { timeSetter };
